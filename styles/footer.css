@@ -1,0 +1,11 @@
+footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 2px solid;
+}
+
+/*# sourceMappingURL=footer.css.map */

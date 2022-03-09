@@ -1,0 +1,14 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 2px solid;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
