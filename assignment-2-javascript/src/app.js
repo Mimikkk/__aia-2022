@@ -1,5 +1,6 @@
-export const getRoot = () => {
-    console.log("xD")
-
-    return document.getElementById("root");
-};
+/** @return {HTMLDivElement} */
+export const getApplicationRoot = () => document.getElementById("root");
+/** @return {HTMLBodyElement} */
+export const getHeadRoot = () => document.getElementById("root");
+/** @return {HTMLHeadElement} */
+export const getBodyRoot = () => document.getElementById("root");
