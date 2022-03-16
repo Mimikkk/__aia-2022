@@ -16,7 +16,7 @@ export const Table = (props) => {
         const rowElement = document.createElement('tr');
         columns.forEach(({key}) => {
             const cell = Object.assign(document.createElement('td'), {className: 'row-cell'});
-            typeof row[key] !== 'string' ? cell.appendChild(row[key]) : cell.textContent = row[key];
+            typeof row[key] !== 'string' && typeof row[key] !== 'number' ? cell.appendChild(row[key]) : cell.textContent = row[key];
             rowElement.appendChild(cell);
         });
         body.appendChild(rowElement);
