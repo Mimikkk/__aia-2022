@@ -26,7 +26,8 @@ const createRipple = (
  * */
 export const Button = ({title, className, onClick}) => {
     const button = Object.assign(document.createElement('button'), {className: 'button', textContent: title});
-    button.classList.add(className);
+    if (className) button.classList.add(className);
+
     button.addEventListener('click', (event) => createRipple(event, button));
     button.addEventListener('click', onClick);
     return button;
