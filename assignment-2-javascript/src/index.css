@@ -1,0 +1,21 @@
+:root {
+  --blue-6: hsl(220, 40%, 10%);
+  --blue-5: hsl(215, 50%, 15%);
+  --blue-4: hsl(210, 60%, 20%);
+  --blue-3: hsl(205, 70%, 25%);
+  --blue-2: hsl(200, 80%, 30%);
+  --blue-1: hsl(200, 90%, 35%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--blue-3);
+}
+
+/*# sourceMappingURL=index.css.map */
