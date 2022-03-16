@@ -21,10 +21,12 @@ const createRipple = (
 
 /**@param title {string}
  * @param onClick {MouseEvent | undefined}
+ * @param className {string | undefined}
  * @returns {HTMLButtonElement}
  * */
-export const Button = ({title, onClick}) => {
+export const Button = ({title, className, onClick}) => {
     const button = Object.assign(document.createElement('button'), {className: 'button', textContent: title});
+    button.classList.add(className);
     button.addEventListener('click', (event) => createRipple(event, button));
     button.addEventListener('click', onClick);
     return button;

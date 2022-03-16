@@ -2,9 +2,10 @@ import {loadCss} from "../../styles/load.js";
 
 loadCss('src/components/Title/Title.css');
 
-/** @param content {string}
+/** @param title {string}
+ * @param className {string | undefined}
  * @return HTMLParagraphElement */
-export const Title = (content) => Object.assign(document.createElement('p'), {
-    className: 'title',
-    textContent: content,
+export const Title = ({title, className}) => Object.assign(document.createElement('p'), {
+    className: `title ${className || ''}`,
+    textContent: title,
 })

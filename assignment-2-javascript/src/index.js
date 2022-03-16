@@ -4,8 +4,7 @@ import {Button} from "./components/Button";
 
 const root = getApplicationRoot();
 
-root.appendChild(Title("Welcome to my book collection"));
-
+root.appendChild(Title({title: "Welcome to my book collection"}));
 const button = Button({title: "Add new book"});
 
 const headerButtonGroup = Object.assign(document.createElement("div"), {className: "header-button-group"});
