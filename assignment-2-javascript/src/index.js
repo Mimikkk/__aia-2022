@@ -1,8 +1,26 @@
 import {getApplicationRoot} from './app.js';
-import {Title} from "./components";
+import {Title, Table} from "./components";
 
 const root = getApplicationRoot();
 
-root.appendChild(Title("Hello World"));
-root.appendChild(Title("Hello World"));
-root.appendChild(Title("Hello World"));
+root.appendChild(Title("Welcome to my book collection"));
+
+const button = Object.assign(document.createElement("button"), {textContent: "Add new book"});
+
+const headerButtonGroup = Object.assign(document.createElement("div"), {className: "header-button-group"});
+headerButtonGroup.appendChild(Object.assign(document.createElement("button"), {textContent: "Edit"}));
+headerButtonGroup.appendChild(Object.assign(document.createElement("button"), {textContent: "Save"}));
+headerButtonGroup.appendChild(Object.assign(document.createElement("button"), {textContent: "Remove"}));
+
+const tableProps = {
+    ref: null,
+    columns: [
+        {header: "Abcd", key: "author"},
+        {header: "Defg", key: "title"},
+        {header: button, key: "control"},
+    ],
+    rows: [{author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup}],
+}
+root.append(Table(tableProps));
+
+console.log({tableProps})
