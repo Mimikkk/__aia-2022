@@ -1,8 +1,21 @@
-/** @param props {object}
+import {loadCss} from "../../styles/load.js";
+
+loadCss("src/components/Table/Table.css");
+
+/** @typedef Props {
+ * @prop {object[]} columns the columns to display in the table
+ * @prop {object[]} rows the rows to display in the table
+ * @prop {string} [className] the class name to apply to the table
+ * @prop {string} ref the reference to apply to the props object
+ */
+
+/** @param props {Props}
  * @return {HTMLTableElement} */
 export const Table = (props) => {
-    const {columns, rows} = props;
-    const table = document.createElement('table');
+    const {columns, rows, className} = props;
+    const table = Object.assign(document.createElement('table'), {className: `table`});
+    if (className) table.classList.add(className);
+
     const header = document.createElement('thead');
     const headerRow = document.createElement('tr');
     columns.forEach(({header}) => {
