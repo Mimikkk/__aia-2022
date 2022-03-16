@@ -1,10 +1,11 @@
 import {getApplicationRoot} from './app.js';
-import {Title, Table} from "./components";
-import {Button} from "./components/Button";
+import {Footer, Title, Table, Button} from "./components";
 
 const root = getApplicationRoot();
+const footer = Footer({});
+footer.appendChild(Title({title: "Welcome to my book collection"}))
+root.appendChild(footer);
 
-root.appendChild(Title({title: "Welcome to my book collection"}));
 const button = Button({title: "Add new book"});
 
 const headerButtonGroup = Object.assign(document.createElement("div"), {className: "header-button-group"});
