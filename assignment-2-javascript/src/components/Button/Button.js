@@ -20,7 +20,7 @@ const createRipple = (
 };
 
 /**@param title {string}
- * @param onClick {MouseEvent}
+ * @param onClick {MouseEvent | undefined}
  * @returns {HTMLButtonElement}
  * */
 export const Button = ({title, onClick}) => {

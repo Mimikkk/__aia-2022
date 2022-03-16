@@ -9,9 +9,9 @@ root.appendChild(Title("Welcome to my book collection"));
 const button = Button({title: "Add new book"});
 
 const headerButtonGroup = Object.assign(document.createElement("div"), {className: "header-button-group"});
-headerButtonGroup.appendChild(Object.assign(document.createElement("button"), {textContent: "Edit"}));
-headerButtonGroup.appendChild(Object.assign(document.createElement("button"), {textContent: "Save"}));
-headerButtonGroup.appendChild(Object.assign(document.createElement("button"), {textContent: "Remove"}));
+headerButtonGroup.appendChild(Button({title: "Edit"}));
+headerButtonGroup.appendChild(Button({title: "Save"}));
+headerButtonGroup.appendChild(Button({title: "Remove"}));
 
 const tableProps = {
     ref: null,
