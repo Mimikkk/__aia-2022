@@ -20,7 +20,21 @@ const tableProps = {
         {header: "Defg", key: "title"},
         {header: button, key: "control"},
     ],
-    rows: [{author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup}],
+    rows: [
+        {author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup},
+        {author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup},
+        {author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup},
+        {author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup},
+        {author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup},
+        {author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup},
+        {author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup},
+        {author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup},
+        {author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup},
+        {author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup},
+        {author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup},
+        {author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup},
+        {author: "Adam Mickiewicz", title: "Mister Theodore", control: headerButtonGroup}
+    ],
 }
 root.append(Table(tableProps));
 console.log({tableProps})

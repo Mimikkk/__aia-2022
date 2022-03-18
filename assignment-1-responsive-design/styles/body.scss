@@ -4,7 +4,4 @@ body {
   height: 100vh;
 
   grid-template-rows: 1fr 22fr 1fr;
-  @media (max-width: 600px) {
-    grid-template-rows: 1fr 23fr;
-  }
 }

@@ -95,11 +95,6 @@ footer {
   padding-bottom: 2rem;
   border-top: 2px solid;
 }
-@media (max-width: 600px) {
-  footer {
-    display: none;
-  }
-}
 
 main {
   display: inline-flex;
@@ -206,11 +201,6 @@ body {
   width: 100vw;
   height: 100vh;
   grid-template-rows: 1fr 22fr 1fr;
-}
-@media (max-width: 600px) {
-  body {
-    grid-template-rows: 1fr 23fr;
-  }
 }
 
 * {
