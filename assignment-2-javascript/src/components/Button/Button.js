@@ -1,34 +1,40 @@
-import {loadCss} from "../../styles/load.js";
+import { loadCss } from "../../styles/load.js";
+import { cx } from "../../utils";
+import { button, span } from "../DOM";
 
-loadCss('src/components/Button/Button.css');
+loadCss("src/components/Button/Button.css");
 
-/** @param clientX {number}
- * @param clientY {number}
+/**
  * @param button {HTMLButtonElement}
  * */
-const createRipple = (
-    {clientX, clientY},
-    button
-) => {
+const createRipple =
+  (button) =>
+  ({ clientX, clientY }) => {
     let [x, y] = [clientX - button.offsetLeft, clientY - button.offsetTop];
-    let ripple = Object.assign(document.createElement("span"), {className: "ripple"});
-    ripple.style.top = `${y}px`;
-    ripple.style.left = `${x}px`;
+    let ref = span({
+      class: "ripple",
+      style: {
+        top: `${y}px`,
+        left: `${x}px`,
+      },
+    });
 
-    button.append(ripple);
-    setTimeout(() => ripple.remove(), 1000);
-};
+    button.append(ref);
+    setTimeout(() => ref.remove(), 41000);
+  };
 
 /**@param title {string}
  * @param onClick {MouseEvent | undefined}
  * @param className {string | undefined}
  * @returns {HTMLButtonElement}
  * */
-export const Button = ({title, className, onClick}) => {
-    const button = Object.assign(document.createElement('button'), {className: 'button', textContent: title});
-    if (className) button.classList.add(className);
+export const Button = ({ title, onClick, ...props }) => {
+  const ref = button({
+    class: cx("button", props.class),
+    textContent: title,
+  });
 
-    button.addEventListener('click', (event) => createRipple(event, button));
-    button.addEventListener('click', onClick);
-    return button;
-}
+  ref.addEventListener("click", createRipple(ref));
+  ref.addEventListener("click", onClick);
+  return ref;
+};
