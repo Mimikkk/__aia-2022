@@ -21,9 +21,8 @@ export const styled = (style) =>
 export const create = (tag, props = {}) => {
   const ref = Object.assign(document.createElement(tag), {
     ...props,
-    className: cx(props.class, props.className),
   });
   if (props.style) ref.style.cssText = styled(props.style);
-
+  if (props.class) ref.className = cx(props.class, props.className);
   return ref;
 };

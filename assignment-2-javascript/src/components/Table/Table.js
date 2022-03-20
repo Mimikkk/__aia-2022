@@ -1,51 +1,31 @@
 import { loadCss } from "../../styles";
-import { addChild } from "../../utils";
+import { add, cx } from "../../utils";
+import { table, tbody, td, th, thead, tr } from "../DOM";
 
 loadCss("src/components/Table/Table.css");
 
 /** @typedef Props {
- * @prop {object[]} columns the columns to display in the table
- * @prop {object[]} rows the rows to display in the table
- * @prop {string} [className] the class name to apply to the table
- * @prop {string} ref the reference to apply to the props object
+ * @property {object[]} columns the columns to display in the table
+ * @property {object[]} rows the rows to display in the table
+ * @property {string=} [class] the class name to apply to the table
+ * @property {HTMLElement=} ref the reference to apply to the props object
  */
 
 /** @param props {Props}
  * @return {HTMLTableElement} */
 export const Table = (props) => {
-  const { columns, rows, className } = props;
-  const table = Object.assign(document.createElement("table"), {
-    className: `table`,
-  });
-  if (className) table.classList.add(className);
-
-  const header = document.createElement("thead");
-  const headerRow = document.createElement("tr");
-  columns.forEach(({ header }) => {
-    const cell = Object.assign(document.createElement("th"), {
-      className: "column-cell",
-    });
-    addChild(cell, header);
-    addChild(headerRow, cell);
+  const columns = props.columns.map(({ header }) =>
+    add(th({ class: "column-cell" }), header)
+  );
+  const rows = props.rows.map((row) => {
+    const rowcolumns = props.columns.map(({ key }) =>
+      add(td({ class: "row-cell" }), row[key])
+    );
+    return add(tr, rowcolumns);
   });
 
-  const body = document.createElement("tbody");
-  rows.forEach((row) => {
-    const rowElement = document.createElement("tr");
-    columns.forEach(({ key }) => {
-      const cell = Object.assign(document.createElement("td"), {
-        className: "row-cell",
-      });
-      addChild(cell, row[key]);
-      addChild(rowElement, cell);
-    });
-    addChild(body, rowElement);
-  });
-
-  header.appendChild(headerRow);
-  table.appendChild(header);
-  table.appendChild(body);
-
-  props.ref = table;
-  return table;
+  return (props.ref = add(table({ class: cx("table", props.class) }), [
+    add(thead, tr, columns),
+    add(tbody, rows),
+  ]));
 };

@@ -36,6 +36,8 @@ export const addChild = (parent, children) => {
 export const add = (parent, ...children) => {
   if (!parent || !children) return;
 
+  if (typeof parent === "function") parent = parent();
+
   children.reduce((parent, child) => {
     if (!parent || !child) return;
 

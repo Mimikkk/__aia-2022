@@ -13,19 +13,22 @@ const createRipple =
     let [x, y] = [clientX - button.offsetLeft, clientY - button.offsetTop];
     let ref = span({
       class: "ripple",
-      style: {
-        top: `${y}px`,
-        left: `${x}px`,
-      },
+      style: { top: `${y}px`, left: `${x}px` },
     });
 
     button.append(ref);
-    setTimeout(() => ref.remove(), 41000);
+    setTimeout(() => ref.remove(), 1000);
   };
 
-/**@param title {string}
- * @param onClick {MouseEvent | undefined}
- * @param className {string | undefined}
+/**@typedef Props
+ * @type {object}
+ * @property {string=} [class]
+ * @property {string=} [title]
+ * @property {MouseEvent=} [onClick]
+ * */
+
+/**
+ * @param {Props} [props]
  * @returns {HTMLButtonElement}
  * */
 export const Button = ({ title, onClick, ...props }) => {
