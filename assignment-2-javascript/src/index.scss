@@ -2,7 +2,9 @@
 
 #root {
   display: grid;
-  grid-template-rows: 1fr 23fr;
-  width: 100%;
-  height: 100%;
+  padding: 1rem;
+  row-gap: 1rem;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 23fr);
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
 }

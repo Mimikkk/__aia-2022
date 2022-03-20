@@ -63,19 +63,21 @@ body {
   --blue-3: hsl(205, 70%, 25%);
   --blue-2: hsl(200, 80%, 30%);
   --blue-1: hsl(200, 90%, 35%);
-  --amber-6: hsl(30, 40%, 10%);
-  --amber-5: hsl(30, 50%, 15%);
-  --amber-4: hsl(30, 60%, 20%);
-  --amber-3: hsl(30, 70%, 25%);
-  --amber-2: hsl(30, 80%, 30%);
-  --amber-1: hsl(30, 90%, 35%);
+  --amber-6: hsl(30, 40%, 30%);
+  --amber-5: hsl(30, 50%, 35%);
+  --amber-4: hsl(30, 60%, 40%);
+  --amber-3: hsl(30, 70%, 45%);
+  --amber-2: hsl(30, 80%, 50%);
+  --amber-1: hsl(30, 90%, 55%);
 }
 
 #root {
   display: grid;
-  grid-template-rows: 1fr 23fr;
-  width: 100%;
-  height: 100%;
+  padding: 1rem;
+  row-gap: 1rem;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 23fr);
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
 }
 
 /*# sourceMappingURL=index.css.map */

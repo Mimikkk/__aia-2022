@@ -1,4 +1,5 @@
-import {loadCss} from "../../styles/load.js";
+import { loadCss } from "../../styles/load.js";
+import { addChild } from "../../utils";
 
 loadCss("src/components/Table/Table.css");
 
@@ -12,33 +13,39 @@ loadCss("src/components/Table/Table.css");
 /** @param props {Props}
  * @return {HTMLTableElement} */
 export const Table = (props) => {
-    const {columns, rows, className} = props;
-    const table = Object.assign(document.createElement('table'), {className: `table`});
-    if (className) table.classList.add(className);
+  const { columns, rows, className } = props;
+  const table = Object.assign(document.createElement("table"), {
+    className: `table`,
+  });
+  if (className) table.classList.add(className);
 
-    const header = document.createElement('thead');
-    const headerRow = document.createElement('tr');
-    columns.forEach(({header}) => {
-        const cell = Object.assign(document.createElement('th'), {className: 'column-cell'});
-        typeof header !== 'string' ? cell.appendChild(header) : cell.textContent = header;
-        headerRow.appendChild(cell);
+  const header = document.createElement("thead");
+  const headerRow = document.createElement("tr");
+  columns.forEach(({ header }) => {
+    const cell = Object.assign(document.createElement("th"), {
+      className: "column-cell",
     });
+    addChild(cell, header);
+    addChild(headerRow, cell);
+  });
 
-    const body = document.createElement('tbody');
-    rows.forEach((row) => {
-        const rowElement = document.createElement('tr');
-        columns.forEach(({key}) => {
-            const cell = Object.assign(document.createElement('td'), {className: 'row-cell'});
-            typeof row[key] !== 'string' && typeof row[key] !== 'number' ? cell.appendChild(row[key]) : cell.textContent = row[key];
-            rowElement.appendChild(cell);
-        });
-        body.appendChild(rowElement);
+  const body = document.createElement("tbody");
+  rows.forEach((row) => {
+    const rowElement = document.createElement("tr");
+    columns.forEach(({ key }) => {
+      const cell = Object.assign(document.createElement("td"), {
+        className: "row-cell",
+      });
+      addChild(cell, row[key]);
+      addChild(rowElement, cell);
     });
+    addChild(body, rowElement);
+  });
 
-    header.appendChild(headerRow);
-    table.appendChild(header);
-    table.appendChild(body);
+  header.appendChild(headerRow);
+  table.appendChild(header);
+  table.appendChild(body);
 
-    props.ref = table;
-    return table;
-}
+  props.ref = table;
+  return table;
+};
