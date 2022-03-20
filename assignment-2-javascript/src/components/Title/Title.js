@@ -1,15 +1,11 @@
-import {loadCss} from "../../styles/load.js";
+import { loadCss } from "../../styles/load.js";
+import { p } from "../DOM";
+import { cx } from "../../utils";
 
-loadCss('src/components/Title/Title.css');
+loadCss("src/components/Title/Title.css");
 
 /** @param title {string}
- * @param className {string | undefined}
+ * @param class {string | undefined}
  * @return HTMLParagraphElement */
-export const Title = ({title, className}) => {
-    const element = Object.assign(document.createElement('p'), {
-        className: 'title',
-        textContent: title,
-    });
-    if (className) element.classList.add(className);
-    return element;
-}
+export const Title = ({ title, ...props }) =>
+  p({ class: cx("title", props.class), textContent: title });

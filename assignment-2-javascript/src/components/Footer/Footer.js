@@ -1,11 +1,15 @@
-import {loadCss} from "../../styles/load.js";
+import { loadCss } from "../../styles/load.js";
+import { cx } from "../../utils";
+import { footer } from "../DOM";
 
-loadCss('src/components/Footer/Footer.css');
+loadCss("src/components/Footer/Footer.css");
 
-/** @param className {string | undefined}
+/** @typedef Props
+ * @type {object}
+ * @property {string=} class - Additional class name
+ * */
+
+/** @param props {Props=}
  * @return HTMLElement */
-export const Footer = ({className}) => {
-    const element = Object.assign(document.createElement('footer'), {className: 'footer'});
-    if (className) element.classList.add(className);
-    return element;
-}
+export const Footer = (props = {}) =>
+  footer({ class: cx("footer", props.class) });
