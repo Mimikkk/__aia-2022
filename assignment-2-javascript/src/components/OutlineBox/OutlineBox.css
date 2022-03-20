@@ -1,0 +1,28 @@
+.outline-box {
+  @apply bg-gray-800 hover:bg-gray-900 hover:border-amber-400;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  border-width: 2px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  border-color: var(--amber-4);
+  background-color: var(--blue-4);
+}
+.outline-box:hover {
+  border-color: var(--amber-2);
+  background-color: var(--blue-2);
+}
+.outline-box.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.outline-box.labeled {
+  margin-top: -0.625rem;
+}
+.outline-box legend {
+  font-weight: 800;
+}
+
+/*# sourceMappingURL=OutlineBox.css.map */
