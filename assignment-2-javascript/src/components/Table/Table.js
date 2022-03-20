@@ -8,7 +8,6 @@ loadCss("src/components/Table/Table.css");
  * @property {object[]} columns the columns to display in the table
  * @property {object[]} rows the rows to display in the table
  * @property {string=} [class] the class name to apply to the table
- * @property {HTMLElement=} ref the reference to apply to the props object
  */
 
 /** @param props {Props}
@@ -17,6 +16,7 @@ export const Table = (props) => {
   const columns = props.columns.map(({ header }) =>
     add(th({ class: "column-cell" }), header)
   );
+
   const rows = props.rows.map((row) => {
     const rowcolumns = props.columns.map(({ key }) =>
       add(td({ class: "row-cell" }), row[key])
@@ -24,8 +24,8 @@ export const Table = (props) => {
     return add(tr, rowcolumns);
   });
 
-  return (props.ref = add(table({ class: cx("table", props.class) }), [
+  return add(table({ class: cx("table", props.class) }), [
     add(thead, tr, columns),
     add(tbody, rows),
-  ]));
+  ]);
 };

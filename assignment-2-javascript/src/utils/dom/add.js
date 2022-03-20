@@ -8,7 +8,7 @@
  * @param children {NodeElement | NodeElement[]}
  * */
 export const addChild = (parent, children) => {
-  if (!parent || (!children && children !== 0)) return;
+  if (!parent || (!children && !(children === "" || children === 0))) return;
 
   switch (typeof children) {
     case "string":
@@ -39,7 +39,7 @@ export const add = (parent, ...children) => {
   if (typeof parent === "function") parent = parent();
 
   children.reduce((parent, child) => {
-    if (!parent || !child) return;
+    if (!parent || (!child && !(child === "" || child === 0))) return;
 
     switch (typeof child) {
       case "function":

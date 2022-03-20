@@ -3,9 +3,7 @@
   border: 4px solid;
   padding: 0.5rem;
 
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
   border-color: var(--amber-4);
   background-color: var(--blue-6);
@@ -14,7 +12,6 @@
     border-color: var(--amber-1);
     background-color: var(--blue-5);
   }
-
 
   &.centered {
     display: flex;

@@ -23,7 +23,6 @@ const createRipple =
 /**@typedef Props
  * @type {object}
  * @property {string=} [class]
- * @property {string=} [title]
  * @property {MouseEvent=} [onClick]
  * */
 
@@ -31,14 +30,10 @@ const createRipple =
  * @param {Props} [props]
  * @returns {HTMLButtonElement}
  * */
-export const Button = ({ title, onClick, ...props }) => {
-  const ref = button({
-    class: cx("button", props.class),
-    textContent: title,
-    ...props,
-  });
+export const Button = ({ onClick, ...props } = {}) => {
+  const ref = button({ ...props, class: cx("button", props.class) });
 
   ref.addEventListener("click", createRipple(ref));
-  ref.addEventListener("click", onClick);
+  if (onClick) ref.addEventListener("click", onClick);
   return ref;
 };

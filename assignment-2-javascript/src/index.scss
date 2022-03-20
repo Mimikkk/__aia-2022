@@ -8,6 +8,12 @@
   width: calc(100% - 2rem);
   height: calc(100% - 2rem);
 }
+
 *, *::after, *::before {
   box-sizing: border-box;
+}
+
+.squared {
+  width: 3rem;
+  height: 3rem;
 }

@@ -2,17 +2,15 @@
   padding: 0.5rem;
   border: 2px solid;
   border-radius: 0.375rem;
-  background-color: var(--blue-1);
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-block;
   position: relative;
   overflow: hidden;
 
+  background-color: var(--blue-1);
   &:hover {
-    border-color: rgb(251 191 36);
-    background-color: rgb(30 64 175);
+    border-color: var(--amber-2);
+    background-color: var(--blue-2);
   }
 }
 

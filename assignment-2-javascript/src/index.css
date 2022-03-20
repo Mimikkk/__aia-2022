@@ -84,4 +84,9 @@ body {
   box-sizing: border-box;
 }
 
+.squared {
+  width: 3rem;
+  height: 3rem;
+}
+
 /*# sourceMappingURL=index.css.map */
