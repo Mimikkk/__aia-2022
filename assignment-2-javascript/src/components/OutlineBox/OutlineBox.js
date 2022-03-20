@@ -1,6 +1,6 @@
 import { add, cx } from "../../utils";
 import { fieldset, legend } from "../DOM";
-import { loadCss } from "../../styles/load.js";
+import { loadCss } from "../../styles";
 
 loadCss("src/components/OutlineBox/OutlineBox.css");
 

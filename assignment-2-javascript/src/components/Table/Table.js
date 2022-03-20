@@ -1,4 +1,4 @@
-import { loadCss } from "../../styles/load.js";
+import { loadCss } from "../../styles";
 import { addChild } from "../../utils";
 
 loadCss("src/components/Table/Table.css");

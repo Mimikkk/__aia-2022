@@ -1,4 +1,4 @@
-import { loadCss } from "../../styles/load.js";
+import { loadCss } from "../../styles";
 import { cx } from "../../utils";
 import { button, span } from "../DOM";
 
