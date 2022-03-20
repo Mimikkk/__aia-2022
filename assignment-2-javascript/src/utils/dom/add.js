@@ -8,12 +8,12 @@
  * @param children {NodeElement | NodeElement[]}
  * */
 export const addChild = (parent, children) => {
-  if (!parent || !children) return;
+  if (!parent || (!children && children !== 0)) return;
 
   switch (typeof children) {
     case "string":
     case "number":
-      return (parent.textContent = `${parent?.textContent}${children}`);
+      return parent.appendChild(document.createTextNode(`${children}`));
     case "function":
       return parent.appendChild(children());
     case "object":

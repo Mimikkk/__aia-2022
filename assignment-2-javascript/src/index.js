@@ -13,82 +13,121 @@ const headerButtonGroup = () =>
     Button({ title: "Remove" }),
   ]);
 
-const button = Button({ title: "Add new book" });
-const tableProps = {
-  ref: null,
-  columns: [
-    { header: "Abcd", key: "author" },
-    { header: "Defg", key: "title" },
-    { header: button, key: "control" },
-  ],
-  rows: [
+const Counter = () => {
+  const store = new Proxy(
+    { value: 5, xd: "Xddd" },
     {
-      author: "Adam Mickiewicz",
-      title: "Mister Theodore",
-      control: headerButtonGroup,
-    },
-    {
-      author: "Adam Mickiewicz",
-      title: "Mister Theodore",
-      control: headerButtonGroup,
-    },
-    {
-      author: "Adam Mickiewicz",
-      title: "Mister Theodore",
-      control: headerButtonGroup,
-    },
-    {
-      author: "Adam Mickiewicz",
-      title: "Mister Theodore",
-      control: headerButtonGroup,
-    },
-    {
-      author: "Adam Mickiewicz",
-      title: "Mister Theodore",
-      control: headerButtonGroup,
-    },
-    {
-      author: "Adam Mickiewicz",
-      title: "Mister Theodore",
-      control: headerButtonGroup,
-    },
-    {
-      author: "Adam Mickiewicz",
-      title: "Mister Theodore",
-      control: headerButtonGroup,
-    },
-    {
-      author: "Adam Mickiewicz",
-      title: "Mister Theodore",
-      control: headerButtonGroup,
-    },
-    {
-      author: "Adam Mickiewicz",
-      title: "Mister Theodore",
-      control: headerButtonGroup,
-    },
-    {
-      author: "Adam Mickiewicz",
-      title: "Mister Theodore",
-      control: headerButtonGroup,
-    },
-    {
-      author: "Adam Mickiewicz",
-      title: "Mister Theodore",
-      control: headerButtonGroup,
-    },
-    {
-      author: "Adam Mickiewicz",
-      title: "Mister Theodore",
-      control: headerButtonGroup,
-    },
-    {
-      author: "Adam Mickiewicz",
-      title: "Mister Theodore",
-      control: headerButtonGroup,
-    },
-  ],
+      set(target, p, value, receiver) {
+        console.log(target, p, value, receiver);
+        return false;
+      },
+    }
+  );
+
+  console.log(store);
+
+  return add(
+    div({
+      style: {
+        display: "flex",
+      },
+    }),
+    [
+      Button({
+        title: "-",
+        style: { width: "3rem", height: "3rem" },
+        onClick: () => (store.value -= -1),
+      }),
+      add(
+        OutlineBox({
+          style: { width: "3rem", height: "3rem" },
+        }),
+        store.value
+      ),
+      Button({
+        title: "+",
+        style: { width: "3rem", height: "3rem" },
+        onClick: () => (store.value += 1),
+      }),
+    ]
+  );
 };
 
-add(root, OutlineBox({ label: "Autorzy" }), Table(tableProps));
-console.log({ tableProps });
+add(root, OutlineBox, Counter);
+
+// const tableProps = {
+//   ref: null,
+//   columns: [
+//     { header: "Abcd", key: "author" },
+//     { header: "Defg", key: "title" },
+//     { header: button, key: "control" },
+//   ],
+//   rows: [
+//     {
+//       author: "Adam Mickiewicz",
+//       title: "Mister Theodore",
+//       control: headerButtonGroup,
+//     },
+//     {
+//       author: "Adam Mickiewicz",
+//       title: "Mister Theodore",
+//       control: headerButtonGroup,
+//     },
+//     {
+//       author: "Adam Mickiewicz",
+//       title: "Mister Theodore",
+//       control: headerButtonGroup,
+//     },
+//     {
+//       author: "Adam Mickiewicz",
+//       title: "Mister Theodore",
+//       control: headerButtonGroup,
+//     },
+//     {
+//       author: "Adam Mickiewicz",
+//       title: "Mister Theodore",
+//       control: headerButtonGroup,
+//     },
+//     {
+//       author: "Adam Mickiewicz",
+//       title: "Mister Theodore",
+//       control: headerButtonGroup,
+//     },
+//     {
+//       author: "Adam Mickiewicz",
+//       title: "Mister Theodore",
+//       control: headerButtonGroup,
+//     },
+//     {
+//       author: "Adam Mickiewicz",
+//       title: "Mister Theodore",
+//       control: headerButtonGroup,
+//     },
+//     {
+//       author: "Adam Mickiewicz",
+//       title: "Mister Theodore",
+//       control: headerButtonGroup,
+//     },
+//     {
+//       author: "Adam Mickiewicz",
+//       title: "Mister Theodore",
+//       control: headerButtonGroup,
+//     },
+//     {
+//       author: "Adam Mickiewicz",
+//       title: "Mister Theodore",
+//       control: headerButtonGroup,
+//     },
+//     {
+//       author: "Adam Mickiewicz",
+//       title: "Mister Theodore",
+//       control: headerButtonGroup,
+//     },
+//     {
+//       author: "Adam Mickiewicz",
+//       title: "Mister Theodore",
+//       control: headerButtonGroup,
+//     },
+//   ],
+// };
+// add(root, OutlineBox({ label: "Autorzy" }), Table(tableProps));

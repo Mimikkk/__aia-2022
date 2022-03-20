@@ -35,6 +35,7 @@ export const Button = ({ title, onClick, ...props }) => {
   const ref = button({
     class: cx("button", props.class),
     textContent: title,
+    ...props,
   });
 
   ref.addEventListener("click", createRipple(ref));

@@ -9,7 +9,12 @@ loadCss("src/components/OutlineBox/OutlineBox.css");
  * @param className {string | undefined}
  * @return {HTMLFieldSetElement}
  * */
-export const OutlineBox = ({ className, label, centered = true } = {}) =>
+export const OutlineBox = ({
+  className,
+  label,
+  centered = true,
+  ...props
+} = {}) =>
   add(
     fieldset({
       className: cx(
@@ -18,6 +23,7 @@ export const OutlineBox = ({ className, label, centered = true } = {}) =>
         centered && "centered",
         className
       ),
+      ...props,
     }),
     label && legend({ label })
   );
