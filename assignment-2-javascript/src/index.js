@@ -6,8 +6,6 @@ import { div } from "./components/DOM";
 const root = getApplicationRoot();
 add(root, Footer, Title({ title: "Hello to my book collection" }));
 
-const button = Button({ title: "Add new book" });
-
 const headerButtonGroup = () =>
   add(div({ class: "header-button-group" }), [
     Button({ title: "Edit" }),
@@ -15,6 +13,7 @@ const headerButtonGroup = () =>
     Button({ title: "Remove" }),
   ]);
 
+const button = Button({ title: "Add new book" });
 const tableProps = {
   ref: null,
   columns: [
@@ -90,5 +89,6 @@ const tableProps = {
     },
   ],
 };
+
 add(root, OutlineBox({ label: "Autorzy" }), Table(tableProps));
 console.log({ tableProps });
