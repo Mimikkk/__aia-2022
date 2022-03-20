@@ -18,9 +18,12 @@ export const styled = (style) =>
  * @param tag {string} - The tag name of the element to create.
  * @param props {Props=} - optional properties.
  * @return {HTMLElement} */
-export const create = (tag, props = {}) =>
-  Object.assign(document.createElement(tag), {
+export const create = (tag, props = {}) => {
+  const ref = Object.assign(document.createElement(tag), {
     ...props,
     className: cx(props.class, props.className),
-    style: props.style && styled(props.style),
   });
+  if (props.style) ref.style.cssText = styled(props.style);
+
+  return ref;
+};

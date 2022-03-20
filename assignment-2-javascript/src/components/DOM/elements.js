@@ -7,20 +7,61 @@ import { create } from "../../utils";
 export const legend = ({ label, ...props }) =>
   create("legend", { textContent: label, ...props });
 
-/** @return {HTMLFieldSetElement} */
+/**
+ * @param {object=} props
+ * @return {HTMLFieldSetElement} */
 export const fieldset = (props) => create("fieldset", props);
 
-/** @return {HTMLElement} */
+/**
+ * @param {object=} props
+ * @return {HTMLElement} */
 export const footer = (props) => create("footer", props);
 
-/** @return {HTMLParagraphElement} */
+/**
+ * @param {object=} props
+ * @return {HTMLParagraphElement} */
 export const p = (props) => create("p", props);
 
-/** @return {HTMLButtonElement} */
+/**
+ * @param {object=} props
+ * @return {HTMLButtonElement} */
 export const button = (props) => create("button", { type: "button", ...props });
 
-/** @return {HTMLSpanElement} */
+/**
+ * @param {object=} props
+ * @return {HTMLSpanElement} */
 export const span = (props) => create("span", props);
 
-/** @return {HTMLDivElement} */
+/**
+ * @param {object=} props
+ * @return {HTMLDivElement} */
 export const div = (props) => create("div", props);
+
+/**
+ * @param {object=} props
+ * @return {HTMLTableCellElement}*/
+export const td = (props) => create("td", props);
+/**
+ * @param {object=} props
+ * @return {HTMLTableCellElement}*/
+export const th = (props) => create("th", props);
+
+/**
+ * @param {object=} props
+ * @return {HTMLTableSectionElement}*/
+export const thead = (props) => create("thead", props);
+
+/**
+ * @param {object=} props
+ * @return {HTMLTableRowElement}*/
+export const tr = (props) => create("tr", props);
+
+/**
+ * @param {object=} props
+ * @return {HTMLTableElement}*/
+export const table = (props) => create("table", props);
+
+/**
+ * @param {object=} props
+ * @return {HTMLTableSectionElement}*/
+export const tbody = (props) => create("tbody", props);
