@@ -49,4 +49,5 @@ export const add = (parent, ...children) => {
         return child;
     }
   }, parent);
+  return parent;
 };
