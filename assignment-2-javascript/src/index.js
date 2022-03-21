@@ -16,7 +16,7 @@ const headerButtonGroup = () =>
         justifyContent: "center",
       },
     }),
-    [add(Button, "Edytuj"), add(Button, "Zapisz"), add(Button, "Usuń")]
+    [add(Button, "Edit"), add(Button, "Save"), add(Button, "Remove")]
   );
 
 const mockRow = () => ({
@@ -30,10 +30,10 @@ const tableProps = {
     { header: "Autor", key: "author" },
     { header: "Tytuł", key: "title" },
     {
-      header: add(Button, "Dodaj nową pozycję"),
+      header: add(Button, "Add new book"),
       key: "control",
     },
   ],
   rows: range(25).map(mockRow),
 };
-add(root, OutlineBox, Table(tableProps));
+add(root, OutlineBox({ label: "Book collection" }), Table(tableProps));
