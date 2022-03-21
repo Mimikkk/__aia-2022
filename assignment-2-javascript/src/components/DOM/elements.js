@@ -1,11 +1,11 @@
-import { create } from "../../utils";
+import { add, create } from "../../utils";
 
 /**
  * @param label {string} - Text Label
  * @param props - Other legend props
  * @return {HTMLLegendElement} */
 export const legend = ({ label, ...props }) =>
-  create("legend", { textContent: label, ...props });
+  add(create("legend", props), label);
 
 /**
  * @param {object=} props
