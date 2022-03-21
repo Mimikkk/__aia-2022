@@ -16,6 +16,7 @@
   th {
     font-weight: bold;
   }
+
   td {
     text-align: center;
   }
@@ -23,13 +24,25 @@
   tbody {
     display: block;
     max-height: 600px;
-    overflow: auto;
+    overflow-y: scroll;
   }
 
   thead {
     width: calc(100% - 1rem);
     display: table;
     table-layout: fixed;
+    position: relative;
+  }
+
+  thead:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-left: 1rem;
+    margin-right: 2rem;
+    width: calc(100% - 3rem);
+    border-bottom: 2px solid var(--amber-4);
   }
 
   tbody tr {
