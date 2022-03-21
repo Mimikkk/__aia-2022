@@ -1,4 +1,4 @@
 /** @return {HTMLDivElement} */
-export const getApplicationRoot = () => document.getElementById("root");
+export const ApplicationRoot = () => document.getElementById("root");
 /** @return {HTMLBodyElement} */
-export const getHeadRoot = () => document.getElementById("head");
+export const HeadRoot = () => document.getElementById("head");

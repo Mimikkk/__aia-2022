@@ -65,3 +65,12 @@ export const table = (props) => create("table", props);
  * @param {object=} props
  * @return {HTMLTableSectionElement}*/
 export const tbody = (props) => create("tbody", props);
+/**
+ * @param {object=} props
+ * @return {HTMLTableSectionElement}*/
+export const stylesheet = (props) =>
+  create("link", {
+    rel: "stylesheet",
+    type: "text/css",
+    ...props,
+  });
