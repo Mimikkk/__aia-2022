@@ -1,16 +1,35 @@
 .table {
-  border-spacing: 0.5rem;
+  border-spacing: 0.25rem;
   border-collapse: separate;
   background-color: var(--blue-6);
   border-radius: 0.5rem;
   border: 2px solid var(--amber-4);
+  box-sizing: border-box;
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .table:hover {
   border: 2px solid var(--amber-1);
 }
 .table th {
-  font-weight: 1000;
+  font-weight: bold;
+}
+.table td {
+  text-align: center;
+}
+.table tbody {
+  display: block;
+  max-height: 600px;
+  overflow: auto;
+}
+.table thead {
+  width: calc(100% - 1rem);
+  display: table;
+  table-layout: fixed;
+}
+.table tbody tr {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
 }
 
 /*# sourceMappingURL=Table.css.map */

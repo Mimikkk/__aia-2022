@@ -1,6 +1,6 @@
 import { getApplicationRoot } from "./app.js";
 import { Button, Footer, OutlineBox, Table, Title } from "./components";
-import { add } from "./utils";
+import { add, range } from "./utils";
 import { div, span } from "./components/DOM";
 
 const root = getApplicationRoot();
@@ -10,16 +10,20 @@ const headerButtonGroup = () =>
   add(
     div({
       class: "header-button-group",
-      style: { display: "flex", columnGap: "0.25rem" },
+      style: {
+        display: "flex",
+        columnGap: "0.25rem",
+        justifyContent: "center",
+      },
     }),
     [add(Button, "Edytuj"), add(Button, "Zapisz"), add(Button, "Usuń")]
   );
 
-const mockRow = {
+const mockRow = () => ({
   author: "Adam Mickiewicz",
   title: "Mister Theodore",
   control: headerButtonGroup,
-};
+});
 
 const tableProps = {
   columns: [
@@ -30,6 +34,6 @@ const tableProps = {
       key: "control",
     },
   ],
-  rows: [mockRow, mockRow],
+  rows: range(25).map(mockRow),
 };
 add(root, OutlineBox, Table(tableProps));
