@@ -14,6 +14,11 @@ export const fieldset = (props) => create("fieldset", props);
 
 /**
  * @param {object=} props
+ * @return {HTMLInputElement} */
+export const input = (props) => create("input", props);
+
+/**
+ * @param {object=} props
  * @return {HTMLElement} */
 export const footer = (props) => create("footer", props);
 
@@ -65,6 +70,7 @@ export const table = (props) => create("table", props);
  * @param {object=} props
  * @return {HTMLTableSectionElement}*/
 export const tbody = (props) => create("tbody", props);
+
 /**
  * @param {object=} props
  * @return {HTMLTableSectionElement}*/
