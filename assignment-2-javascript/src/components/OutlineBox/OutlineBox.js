@@ -1,8 +1,8 @@
 import { add, cx } from "../../utils";
 import { fieldset, legend } from "../DOM";
-import { loadCss } from "../../styles";
+import { importCss } from "../../styles";
 
-loadCss("src/components/OutlineBox/OutlineBox.css");
+importCss("src/components/OutlineBox/OutlineBox.css");
 
 /** @param label {string | undefined}
  * @param centered {boolean | undefined}

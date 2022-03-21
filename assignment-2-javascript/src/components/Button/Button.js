@@ -1,8 +1,8 @@
-import { loadCss } from "../../styles";
+import { importCss } from "../../styles";
 import { cx } from "../../utils";
 import { button, span } from "../DOM";
 
-loadCss("src/components/Button/Button.css");
+importCss("src/components/Button/Button.css");
 
 /**
  * @param button {HTMLButtonElement}

@@ -1,8 +1,8 @@
-import { loadCss } from "../../styles";
+import { importCss } from "../../styles";
 import { p } from "../DOM";
 import { cx } from "../../utils";
 
-loadCss("src/components/Title/Title.css");
+importCss("src/components/Title/Title.css");
 
 /** @typedef Props
  * @property {string=} [class]

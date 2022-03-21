@@ -1,8 +1,8 @@
-import { loadCss } from "../../styles";
+import { importCss } from "../../styles";
 import { add, cx } from "../../utils";
 import { table, tbody, td, th, thead, tr } from "../DOM";
 
-loadCss("src/components/Table/Table.css");
+importCss("src/components/Table/Table.css");
 
 /** @typedef Props {
  * @property {object[]} columns the columns to display in the table

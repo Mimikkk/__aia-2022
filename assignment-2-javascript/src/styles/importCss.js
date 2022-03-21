@@ -6,7 +6,7 @@ import { stylesheet } from "../components/DOM";
 const filepaths = [];
 
 /** @param filepath {string} */
-export const loadCss = (filepath) => {
+export const importCss = (filepath) => {
   if (filepaths.includes(filepath)) return;
   filepaths.push(filepath);
 

@@ -1,8 +1,8 @@
-import { loadCss } from "../../styles";
+import { importCss } from "../../styles";
 import { cx } from "../../utils";
 import { footer } from "../DOM";
 
-loadCss("src/components/Footer/Footer.css");
+importCss("src/components/Footer/Footer.css");
 
 /** @typedef Props
  * @type {object}
